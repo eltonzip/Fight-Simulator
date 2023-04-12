@@ -1,4 +1,4 @@
-import random as rdm
+from random import randint
 
 class TTarget:
     health = int
@@ -38,7 +38,7 @@ while True:
         else:
             Warrior2.statscheck()
     elif Q == 1:
-        AttCnst = rdm.randint(1, 2+1)
+        AttCnst = randint(1, 2+1)
         if AttCnst == 2:
             Warrior1.attack(Warrior1, Warrior2)
         else:
