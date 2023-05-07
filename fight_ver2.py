@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 class TTarget:
     health = int
@@ -19,6 +20,10 @@ class TTarget:
             print(target1.nm + "'s health is now", target1.hp)
         if target1.hp <= 0:
             print(target1.nm, "is dead!", target.nm, "has won!")
+            print('Game over! Game stops in')
+            for t in range(3, 0, -1):
+                print(t)
+                sleep(1)
             exit()
     
 Warrior1 = TTarget("John", 100)
@@ -26,14 +31,14 @@ Warrior2 = TTarget("Mary", 100)
 
 Q = 0
 
-while True:
+def Game():
     Q = int(input("1(attack) or 2(exit) or 3(stats): "))
 
     if Q == 2:
         exit()
     elif Q == 3:
         nuw = int(input("Wich one of two: "))
-        if nuw == 1:
+        if nuw < 2:
             Warrior1.statscheck()
         else:
             Warrior2.statscheck()
@@ -45,3 +50,6 @@ while True:
             Warrior2.attack(Warrior2, Warrior1)
 
     print("-"*len("1(attack) or 2(exit) or 3(stats): "))
+
+while True:
+    Game()
