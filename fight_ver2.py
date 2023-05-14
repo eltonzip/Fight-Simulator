@@ -23,7 +23,7 @@ class TTarget:
             print('Game over! Game stops in')
             for t in range(3, 0, -1):
                 print(t)
-                sleep(1)
+                sleep(2)
             exit()
     
 Warrior1 = TTarget("John", 100)
